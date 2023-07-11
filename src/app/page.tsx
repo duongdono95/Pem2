@@ -1,95 +1,45 @@
-import Image from 'next/image'
-import styles from './page.module.css'
-
-export default function Home() {
+import { Buttons } from "@/components/Buttons/Buttons";
+import { authOptions } from "@/lib/auth";
+import { getServerSession } from "next-auth";
+import { Home } from "lucide-react";
+import Link from "next/link";
+import "./GlobalStyles.scss";
+import GeneralFeeds from "@/components/Feed/GeneralFeeds/GeneralFeeds";
+import CustomFeed from "@/components/Feed/CustomFeed/CustomFeed";
+import { toast } from "react-toastify";
+export default async function HomePage() {
+  const session = await getServerSession(authOptions);
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
+    <div className="home-page">
+      <div className="left">
+        <h1>All Feed </h1>
+        {/* @ts-expect-error server component */}
+        {session?.user ? <CustomFeed /> : <GeneralFeeds />}
+      </div>
+      <div className="right">
+        {/* <p className="greeting">
+          Welcome back <span>{session?.user.name}</span>
         </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+        <div className="details">
+          <p>Let's Check out your Favorite Communities</p>
+          <Link href="r/create">
+            <Buttons.primary content="Create New Community" />
+          </Link>
+        </div> */}
+        <p className="title">
+          <Home /> Home
+        </p>
+        <div className="details">
+          <p>PemTalk - official Community for PEM LTD.</p>
+          <p>
+            Come here to check in with your favorite
+            communities.
+          </p>
+          <Link className="button" href="r/create">
+            Create Community
+          </Link>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </div>
+  );
 }

@@ -1,0 +1,11 @@
+.community-page {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  .left {
+    width: 65%;
+  }
+  .right {
+    width: 30%;
+  }
+}

@@ -1,0 +1,40 @@
+.sign-in-modal {
+  position: relative;
+  max-width: 500px;
+  min-width: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding: 2%;
+  background-color: var(--white005);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  h1 {
+    opacity: 0.5;
+  }
+  .policy {
+    text-align: center;
+    line-height: 25px;
+    font-size: 14px;
+  }
+
+  .option {
+    font-size: 14px;
+    opacity: 0.7;
+    span {
+      opacity: 0.7;
+      text-decoration: underline;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .close-btn {
+    position: absolute;
+    right: -3%;
+    top: -3%;
+  }
+}

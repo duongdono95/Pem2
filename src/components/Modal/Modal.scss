@@ -1,0 +1,11 @@
+.Modal {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--white005);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+}
