@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ChevronLeft, Loader, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-interface ButtonProps
+interface GeneralButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   content: string;
   disabled?: boolean;
@@ -12,19 +12,11 @@ interface ButtonProps
   isLoading?: boolean;
 }
 
-const Button = React.forwardRef<
-  HTMLButtonElement,
-  ButtonProps
->(
-  (
-    { isLoading, isPrimary, content, disabled, ...props },
-    ref
-  ) => {
+const GeneralButton = React.forwardRef<HTMLButtonElement, GeneralButtonProps>(
+  ({ isLoading, isPrimary, content, disabled, ...props }, ref) => {
     return (
       <button
-        className={`${
-          isPrimary ? "primary" : "secondary"
-        }-button`}
+        className={`${isPrimary ? "primary" : "secondary"}-button`}
         disabled={disabled}
         {...props}
         ref={ref}
@@ -40,7 +32,7 @@ const Button = React.forwardRef<
     );
   }
 );
-Button.displayName = "Button";
+GeneralButton.displayName = "Button";
 
 const BackButton = () => {
   const router = useRouter();
@@ -61,8 +53,7 @@ const CloseButton = () => {
 };
 
 export const Buttons = {
-  primary: Button,
-  secondary: Button,
+  general: GeneralButton,
   google: () => (
     <div className="google-auth-btn">
       <div

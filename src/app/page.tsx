@@ -23,7 +23,7 @@ export default async function HomePage() {
         <div className="details">
           <p>Let's Check out your Favorite Communities</p>
           <Link href="r/create">
-            <Buttons.primary content="Create New Community" />
+            <Buttons.general content="Create New Community" />
           </Link>
         </div> */}
         <p className="title">
@@ -31,10 +31,7 @@ export default async function HomePage() {
         </p>
         <div className="details">
           <p>PemTalk - official Community for PEM LTD.</p>
-          <p>
-            Come here to check in with your favorite
-            communities.
-          </p>
+          <p>Come here to check in with your favorite communities.</p>
           <Link className="button" href="r/create">
             Create Community
           </Link>

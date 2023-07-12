@@ -1,0 +1,36 @@
+.mini-create-post {
+  width: 100%;
+  background-color: var(--white01);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 2px 2px 10px var(--black05);
+  .note {
+    padding: 10px 20px;
+    background-color: var(--signature02);
+  }
+  .content-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  .create-post-container {
+    cursor: pointer;
+    flex-grow: 1;
+    border: 1px solid var(--white05);
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    &:hover {
+      border: 1px solid white;
+      box-shadow: 2px 2px 10px var(--white01);
+    }
+    p {
+      flex-grow: 1;
+    }
+    .icons {
+      display: flex;
+      gap: 20px;
+    }
+  }
+}

@@ -17,22 +17,14 @@ const UserAuthForm = () => {
     <div className="user-auth-form">
       <div className="form-group">
         <label htmlFor="username"></label>
-        <input
-          type="text"
-          id="username"
-          placeholder="Email"
-        />
+        <input type="text" id="username" placeholder="Email" />
       </div>
       <div className="form-group">
         <label htmlFor="username"></label>
-        <input
-          type="password"
-          id="username"
-          placeholder="Password"
-        />
+        <input type="password" id="username" placeholder="Password" />
       </div>
       <div className="form-group">
-        <Buttons.primary content="Login" />
+        <Buttons.general content="Login" />
       </div>
 
       <p className="other-option">- Or -</p>

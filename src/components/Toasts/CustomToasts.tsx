@@ -7,7 +7,7 @@ export const loginToast = () => {
     <div className="login-toast">
       <p>Please Login to continue the action</p>
       <Link href="/sign-in">
-        <Buttons.secondary content="Login" />
+        <Buttons.general content="Login" />
       </Link>
     </div>
   );

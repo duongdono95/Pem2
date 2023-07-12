@@ -36,16 +36,9 @@ const page = async ({ params }: PageProps) => {
   if (!subreddit) return notFound();
   return (
     <div className="community-page">
-      <div className="left">
-        <h2>r/{subreddit?.name}</h2>
-        <PostFeed
-          initialPosts={subreddit.posts}
-          subredditName={subreddit.name}
-        />
-      </div>
-      <div className="right">
-        <MiniCreatePost session={session} />
-      </div>
+      <h2>r/{subreddit?.name}</h2>
+      <MiniCreatePost session={session} />
+      <PostFeed initialPosts={subreddit.posts} subredditName={subreddit.name} />
     </div>
   );
 };
